@@ -168,28 +168,28 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Stats
   stats: Stat[] = [
-    { value: 3, display: '0', suffix: 'x', label: 'More Qualified Meetings', current: 0 },
-    { value: 98, display: '0', suffix: '%', label: 'Email Deliverability', current: 0 },
-    { value: 500, display: '0', suffix: '+', label: 'B2B Clients Served', current: 0 }
+    { value: 100, display: '100', suffix: 'x', label: 'More Qualified Meetings', current: 100 },
+    { value: 100, display: '100', suffix: '%', label: 'Email Deliverability', current: 100 },
+    { value: 100, display: '100', suffix: '+', label: 'B2B Clients Served', current: 100 }
   ];
 
   // Edge section
   edgeCards: EdgeCard[] = [
     {
       title: 'Verified, High-Intent Data',
-      description: 'Unlike competitors relying on outdated databases, our B2B email lists are continuously cleansed using AI and human intelligence. Every contact is validated for accuracy, ensuring your campaigns reach decision-makers who are ready to engage.',
+      description: 'AI-validated B2B lists continuously cleansed for maximum accuracy and high-intent engagement.',
       icon: 'shield',
       state: 'idle'
     },
     {
       title: 'End-to-End IT Integration',
-      description: 'We don\'t just generate leads — we ensure your tech stack, CRM, and infrastructure are optimised to handle and close them. Our IT consulting team aligns your technology with your marketing strategy for seamless execution.',
+      description: 'Alignment of your tech stack, CRM, and infrastructure to seamlessly handle and close leads.',
       icon: 'server',
       state: 'idle'
     },
     {
       title: 'ROI-Obsessed Marketing',
-      description: 'From SEO to custom email campaigns, every Win Wibe strategy is built around one metric: your return on investment. We track, measure, and optimise relentlessly to maximise your revenue per pound spent.',
+      description: 'ROI-driven strategies spanning SEO and email to maximise revenue per pound spent.',
       icon: 'chart',
       state: 'idle'
     }
@@ -199,8 +199,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   services: ServiceCard[] = [
     {
       num: '01',
-      title: 'B2B Lead Generation & Email Marketing',
-      description: 'Get directly in front of key decision-makers with meticulously curated, highly accurate B2B email databases tailored to your specific industry, geography, and target titles. Maximise engagement and lower bounce rates.',
+      title: 'B2B Lead Generation',
+      description: 'Reach decision-makers with AI-verified B2B databases tailored to your industry and location.',
       icon: 'email',
       features: ['Industry-specific targeting', 'AI-verified contact lists', 'Compliant outreach campaigns'],
       color: '#4f8eff',
@@ -209,7 +209,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       num: '02',
       title: 'Digital Marketing & SEO',
-      description: 'Dominate the digital landscape with specialists in Search Engine Optimisation, content marketing, and social media management. Engineer your online presence to attract high-intent organic traffic.',
+      description: 'Technical SEO and content strategies engineered to attract high-intent organic traffic.',
       icon: 'search',
       features: ['Technical SEO audits', 'Content strategy & marketing', 'Social media management'],
       color: '#a855f7',
@@ -218,7 +218,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       num: '03',
       title: 'Expert IT Consulting',
-      description: 'Marketing brings the traffic; technology sustains the business. Our IT consulting team helps you optimise your digital infrastructure, implement scalable CRM solutions, and develop custom web applications.',
+      description: 'Scalable CRM solutions and custom web applications to sustain your business growth.',
       icon: 'code',
       features: ['CRM implementation', 'Custom web applications', 'Infrastructure optimisation'],
       color: '#22d3ee',
@@ -226,8 +226,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     },
     {
       num: '04',
-      title: 'Data Appending & Cleansing',
-      description: 'Data decays fast. We take your existing contact lists and cross-reference them against live databases to fill missing information, remove dead contacts, and append rich firmographic data.',
+      title: 'Data & Cleansing',
+      description: 'Live database cross-referencing and firmographic appending to keep your data fresh.',
       icon: 'database',
       features: ['Live database cross-referencing', 'Firmographic data appending', 'Dead contact removal'],
       color: '#f59e0b',
@@ -355,7 +355,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     observe('testimonials-section', () => this.testimonialsVisible = true);
     observe('cta-section', () => this.ctaVisible = true);
     observe('contact-section', () => this.contactVisible = true);
-    observe('stats-row', () => this.animateStats(), 0.5);
+    // observe('stats-row', () => this.animateStats(), 0.5);
   }
 
   // ==========================

@@ -842,6 +842,12 @@ body.scrolled-down .gradient-text {
     gap: 24px;
 }
 
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .service-card {
     background: var(--dark-card);
     border: 1px solid var(--border);

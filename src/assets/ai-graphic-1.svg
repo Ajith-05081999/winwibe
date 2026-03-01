@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#4f8eff"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#4f8eff"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="none"/>
+  <g transform="translate(80,60)">
+    <circle cx="200" cy="150" r="120" fill="url(#g1)" opacity="0.18" />
+    <rect x="330" y="80" width="220" height="220" rx="28" fill="url(#g2)" opacity="0.12" />
+    <g transform="translate(60,40)">
+      <path d="M40 220 C160 100, 320 100, 440 220" stroke="#fff" stroke-opacity="0.12" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <g fill="#fff" opacity="0.9">
+        <circle cx="360" cy="140" r="6" />
+        <circle cx="380" cy="160" r="5" />
+        <circle cx="320" cy="180" r="4" />
+      </g>
+    </g>
+  </g>
+  <g transform="translate(420,340)">
+    <rect x="0" y="0" width="320" height="160" rx="14" fill="url(#g1)" opacity="0.08"/>
+    <path d="M20 40h280v10H20z" fill="#fff" opacity="0.06"/>
+  </g>
+</svg>

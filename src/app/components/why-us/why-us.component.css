@@ -9,3 +9,83 @@
     position: relative;
     overflow: hidden;
 }
+
+/* Section header styles scoped to Why Us component */
+.section-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity .7s ease, transform .7s ease;
+    opacity: 1;
+    transform: translateY(0);
+    margin-bottom: 48px;
+}
+
+.section-header h2 {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    letter-spacing: -.02em;
+    margin-bottom: 16px;
+    color: var(--text);
+    line-height: 1.1;
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-header.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero-like header styles for Why Us */
+.hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 80px 24px;
+    background: transparent;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto 20px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59, 130, 246, 0.06);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    color: var(--blue);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}

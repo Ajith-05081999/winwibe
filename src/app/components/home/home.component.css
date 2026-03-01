@@ -12,3 +12,76 @@
     justify-content: center;
     padding: 120px 24px 60px;
 }
+
+/* Hero inner content copied from app component so styles are scoped to Home */
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black, transparent);
+    pointer-events: none;
+}
+
+.hero-radial {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 90%, rgba(132, 83, 246, 0.05), transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    color: var(--blue);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: .82rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    letter-spacing: .04em;
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -.03em;
+    color: var(--text);
+    margin-bottom: 24px;
+    transition: color 0.8s ease;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    line-height: 1.85;
+    margin-bottom: 36px;
+    max-width: 600px;
+}
+
+.hero-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}

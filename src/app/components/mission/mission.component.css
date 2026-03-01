@@ -8,3 +8,289 @@
     position: relative;
     overflow: hidden;
 }
+
+/* Section header styles scoped to Mission component */
+.section-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity .7s ease, transform .7s ease;
+    opacity: 1;
+    transform: translateY(0);
+    margin-bottom: 48px;
+}
+
+.section-header h2 {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    letter-spacing: -.02em;
+    margin-bottom: 16px;
+    color: var(--text);
+    line-height: 1.1;
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-header.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   MISSION SECTION (moved from app.component.css)
+   ============================================================ */
+.mission-section {
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 50%, var(--dark) 100%);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-radial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(168, 85, 247, .08), transparent);
+    pointer-events: none;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.mission-left h2 {
+    font-family: var(--font-head);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.mission-left p {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    line-height: 1.85;
+    margin-bottom: 14px;
+}
+
+/* Mission Visual */
+.mission-visual {
+    position: relative;
+    width: 480px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+.mv-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(59, 130, 246, .1);
+    animation: rotateSlow 22s linear infinite;
+}
+
+.mv-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.mv-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--text);
+    letter-spacing: .08em;
+    line-height: 1.3;
+    box-shadow: 0 0 60px rgba(79, 142, 255, .4);
+    animation: floatCore 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatCore {
+    from {
+        transform: translate(-50%, calc(-50% - 25px));
+    }
+
+    to {
+        transform: translate(-50%, calc(-50% + 25px));
+    }
+}
+
+.mv-node {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 24px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.mv-node:hover {
+    border-color: var(--blue);
+    transform: scale(1.05);
+}
+
+.node-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.node-top {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: floatNodeY 4s ease-in-out infinite alternate;
+}
+
+.node-right {
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: floatNodeX 4.5s ease-in-out infinite alternate;
+}
+
+.node-bottom {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: floatNodeY 5s ease-in-out infinite alternate-reverse;
+}
+
+.node-left {
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: floatNodeX 4.8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatNodeY {
+    from {
+        transform: translate(-50%, -10px);
+    }
+
+    to {
+        transform: translate(-50%, 10px);
+    }
+}
+
+@keyframes floatNodeX {
+    from {
+        transform: translate(-10px, -50%);
+    }
+
+    to {
+        transform: translate(10px, -50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .mission-left {
+        order: 2;
+    }
+
+    .mission-right {
+        order: 1;
+    }
+
+    .mission-visual {
+        width: 260px;
+        height: 260px;
+    }
+
+    .node-right,
+    .node-left {
+        display: none;
+    }
+}
+
+/* Hero-like header styles for Mission */
+.hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 80px 24px;
+    background: transparent;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto 20px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59, 130, 246, 0.06);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    color: var(--blue);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}

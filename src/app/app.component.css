@@ -265,8 +265,8 @@ body.scrolled-down .gradient-text {
     flex-direction: column;
     align-items: center;
     transition: opacity .7s ease, transform .7s ease;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
     margin-bottom: 48px;
 }
 

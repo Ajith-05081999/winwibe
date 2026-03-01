@@ -1,0 +1,26 @@
+<!-- Testimonials Section -->
+<section id="testimonials-section" class="section testimonials-section" @sectionFade>
+    <div class="container">
+        <div class="section-header">
+            <span class="btn-ghost" style="--ghost-color:var(--blue)">Client Feedback</span>
+            <h2>Proven Results for<br /><span class="gradient-text">Global Partners</span></h2>
+            <p>Read how Win Wibe has helped organisations across three continents achieve their growth targets.</p>
+        </div>
+
+        <div class="testimonials-grid" [@listStagger]="testimonials.length">
+            <ng-container *ngFor="let tm of testimonials; trackBy: trackByName">
+                <div class="testi-card">
+                    <div class="t-tag" [style.background]="tm.gradient">{{ tm.tag }}</div>
+                    <p class="t-text">"{{ tm.text }}"</p>
+                    <div class="t-author">
+                        <div class="t-avatar" [style.background]="tm.gradient">{{ tm.initials }}</div>
+                        <div class="t-info">
+                            <div class="t-name">{{ tm.name }}</div>
+                            <div class="t-company">{{ tm.company }}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</section>

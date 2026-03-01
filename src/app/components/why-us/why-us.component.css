@@ -1,0 +1,11 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.edge-section {
+    padding: 100px 0;
+    background: var(--dark-2);
+    position: relative;
+    overflow: hidden;
+}

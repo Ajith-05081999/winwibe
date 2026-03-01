@@ -1,0 +1,10 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.mission-section {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}

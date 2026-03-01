@@ -1,0 +1,64 @@
+<!-- Services Section -->
+<section id="services-section" class="section services-section" @sectionFade>
+    <div class="container container-large">
+        <div class="section-header">
+            <span class="btn-ghost">What We Offer</span>
+            <h2>Scalable Solutions Designed for<br /><span class="gradient-text">Your Growth</span></h2>
+            <p>The complete toolkit for modern businesses, from AI-verified B2B data to custom web applications.</p>
+        </div>
+
+        <div class="services-grid" [@listStagger]="services.length">
+            <ng-container *ngFor="let service of services; trackBy: trackByTitle">
+                <div class="service-card" [@cardHover]="service.state" (mouseenter)="onServiceHover(service,'hovered')"
+                    (mouseleave)="onServiceHover(service,'idle')" [style.--accent-color]="service.color"
+                    [style.--accent-rgba]="hexToRgb(service.color)">
+                    <div class="s-num">{{ service.num }}</div>
+                    <div class="s-icon">
+                        <ng-container *ngIf="service.icon === 'email'">
+                            <!-- email icon svg -->
+                            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-width="1.8"
+                                    d="M3 8l9 6 9-6v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                                <path stroke="currentColor" stroke-width="1.8" d="M3 8l9 6 9-6" />
+                            </svg>
+                        </ng-container>
+                        <ng-container *ngIf="service.icon === 'search'">
+                            <!-- search icon svg -->
+                            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8" />
+                                <path stroke="currentColor" stroke-width="1.8" d="M21 21l-4.35-4.35" />
+                            </svg>
+                        </ng-container>
+                        <ng-container *ngIf="service.icon === 'code'">
+                            <!-- code icon svg -->
+                            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-width="1.8" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                            </svg>
+                        </ng-container>
+                        <ng-container *ngIf="service.icon === 'database'">
+                            <!-- database icon svg -->
+                            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" stroke="currentColor" stroke-width="1.8" />
+                                <path stroke="currentColor" stroke-width="1.8" d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                                <path stroke="currentColor" stroke-width="1.8" d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+                            </svg>
+                        </ng-container>
+                    </div>
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.description }}</p>
+                    <ul>
+                        <ng-container *ngFor="let feat of service.features; trackBy: trackByFeat">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                {{ feat }}
+                            </li>
+                        </ng-container>
+                    </ul>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</section>

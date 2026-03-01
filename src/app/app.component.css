@@ -984,11 +984,12 @@ a.ci-value:hover {
    FOOTER
    ============================================================ */
 .footer {
-    background: var(--dark-2);
-    border-top: 1px solid var(--border);
-    padding: 60px 24px 0;
+    background: #020617;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 80px 24px 0;
     position: relative;
     z-index: 1;
+    color: #f8fafc;
 }
 
 .footer-grid {
@@ -999,19 +1000,59 @@ a.ci-value:hover {
 }
 
 .footer-brand p {
-    color: var(--text-muted);
-    font-size: 1.15rem;
+    color: #94a3b8;
+    font-size: 1.1rem;
     line-height: 1.7;
-    margin-top: 12px;
+    margin-top: 16px;
+}
+
+.footer-logo .logo-w {
+    color: #fff !important;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.footer-socials a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-bounce);
+}
+
+.footer-socials a:hover {
+    color: #fff;
+    background: var(--blue);
+    border-color: var(--blue);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.footer-socials a svg {
+    transition: transform .3s;
+}
+
+.footer-socials a:hover svg {
+    transform: scale(1.1);
 }
 
 .footer-links-col h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: var(--text);
+    color: #fff;
     letter-spacing: .08em;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .footer-links-col li {
@@ -1019,8 +1060,8 @@ a.ci-value:hover {
 }
 
 .footer-links-col a {
-    color: var(--text-muted);
-    font-size: 1.15rem;
+    color: #94a3b8;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: color .3s;
 }
@@ -1030,15 +1071,16 @@ a.ci-value:hover {
 }
 
 .footer-cta-col p {
-    color: var(--text);
-    font-size: 1.2rem;
+    color: #fff;
+    font-size: 1.15rem;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--border);
-    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px 0;
+    margin-top: 60px;
 }
 
 .footer-bottom-inner {
@@ -1050,8 +1092,8 @@ a.ci-value:hover {
 }
 
 .footer-bottom p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
+    color: #64748b;
+    font-size: 0.9rem;
 }
 
 /* ============================================================

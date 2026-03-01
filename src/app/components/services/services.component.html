@@ -13,7 +13,7 @@
                     (mouseleave)="onServiceHover(service,'idle')" [style.--accent-color]="service.color"
                     [style.--accent-rgba]="hexToRgb(service.color)">
                     <div class="s-num">{{ service.num }}</div>
-                    <div class="s-icon">
+                    <div class="svc-icon-wrap">
                         <ng-container *ngIf="service.icon === 'email'">
                             <!-- email icon svg -->
                             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">

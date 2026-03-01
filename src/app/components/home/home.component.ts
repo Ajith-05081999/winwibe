@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { WhyUsComponent } from '../why-us/why-us.component';
 import { MissionComponent } from '../mission/mission.component';
@@ -23,7 +24,8 @@ import { fadeUp } from '../../shared/animations';
   styleUrls: ['./home.component.css'],
   animations: [fadeUp]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+  private readonly isBrowser: boolean;
   badgeTexts = [
     'Trusted by B2B Leaders Worldwide',
     '500+ Clients Scaled Successfully',
@@ -40,10 +42,19 @@ export class HomeComponent implements OnInit {
     { value: 100, display: '100', suffix: '+', label: 'B2B Clients Served', current: 100 }
   ];
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {
-    this.startBadgeRotation();
+    if (this.isBrowser) this.startBadgeRotation();
+  }
+
+  ngOnDestroy(): void {
+    if (this.badgeInterval) clearInterval(this.badgeInterval);
   }
 
   startBadgeRotation(): void {

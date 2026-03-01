@@ -866,7 +866,7 @@ body.scrolled-down .gradient-text {
 }
 
 .service-card:hover {
-    border-color: rgba(var(--accent-rgb, 59, 130, 246), .35);
+    border-color: rgba(var(--accent-rgb), 0.35);
     background: #fff;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
 }
@@ -891,12 +891,14 @@ body.scrolled-down .gradient-text {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    border: 1px solid;
+    border: 1px solid rgba(var(--accent-rgb), 0.18);
+    background: rgba(var(--accent-rgb), 0.07);
     transition: background var(--transition);
 }
 
 .svc-icon-wrap svg {
     color: var(--accent, var(--blue));
+    stroke: var(--accent, var(--blue));
 }
 
 .service-card h3 {

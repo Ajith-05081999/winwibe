@@ -9,9 +9,9 @@ import { ContactComponent } from './components/contact/contact.component';
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'why-us', component: WhyUsComponent },
-    // { path: 'mission', component: MissionComponent },
-    // { path: 'services', component: ServicesComponent },
-    // { path: 'testimonials', component: TestimonialsComponent },
+    { path: 'mission', component: MissionComponent },
+    { path: 'services', component: ServicesComponent },
+    { path: 'testimonials', component: TestimonialsComponent },
     { path: 'contact', component: ContactComponent },
-    // { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '' }
 ];

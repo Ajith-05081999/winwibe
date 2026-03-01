@@ -123,7 +123,7 @@ body.scrolled-down .gradient-text {
 }
 
 .nav-links a {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 500;
     color: var(--text-muted);
     cursor: pointer;
@@ -160,7 +160,7 @@ body.scrolled-down .gradient-text {
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
     font-weight: 700 !important;
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
     color: transparent !important;
     display: inline-block !important;
     transition: all var(--transition-bounce) !important;
@@ -576,85 +576,15 @@ body.scrolled-down .gradient-text {
 }
 
 /* ============================================================
-   EDGE SECTION
+   HERO SECTION (moved to component-scoped CSS)
    ============================================================ */
-.edge-section {
-    background:
-        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(79, 142, 255, .04), transparent),
-        var(--dark-2);
-}
 
-.edge-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-}
+/* ============================================================
+/* ============================================================
+   EDGE SECTION (moved to component-scoped CSS)
+   ============================================================ */
 
-.edge-card {
-    background: var(--dark-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 36px 32px;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: all var(--transition);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-}
-
-.edge-card:hover {
-    background: #fff;
-    border-color: var(--blue);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.08);
-}
-
-.card-bottom-glow {
-    position: absolute;
-    bottom: -40px;
-    right: -40px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(79, 142, 255, .09), transparent);
-    pointer-events: none;
-}
-
-.card-icon-wrap {
-    width: 54px;
-    height: 54px;
-    border-radius: 14px;
-    background: rgba(79, 142, 255, .07);
-    border: 1px solid rgba(79, 142, 255, .18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.edge-card h3 {
-    font-family: var(--font-head);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 12px;
-    letter-spacing: -.01em;
-    display: inline-block;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.edge-card:hover h3 {
-    animation: slowWordJump 0.7s ease-in-out infinite alternate;
-}
-
-.edge-card p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.75;
-}
-
-/* Mission styles moved to component-scoped CSS */
+/* Testimonials styles moved to component-scoped CSS */
 
 /* ============================================================
    TESTIMONIALS
@@ -966,7 +896,7 @@ a.ci-value:hover {
     text-transform: uppercase;
 }
 
-.form-group input,
+/* .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
@@ -980,7 +910,7 @@ a.ci-value:hover {
     outline: none;
     transition: border-color .3s, box-shadow .3s, background .3s;
     appearance: none;
-}
+} */
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
@@ -1070,13 +1000,13 @@ a.ci-value:hover {
 
 .footer-brand p {
     color: var(--text-muted);
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     line-height: 1.7;
     margin-top: 12px;
 }
 
 .footer-links-col h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text);
     letter-spacing: .08em;
@@ -1090,7 +1020,7 @@ a.ci-value:hover {
 
 .footer-links-col a {
     color: var(--text-muted);
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     cursor: pointer;
     transition: color .3s;
 }
@@ -1101,7 +1031,7 @@ a.ci-value:hover {
 
 .footer-cta-col p {
     color: var(--text);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.5;
 }
@@ -1127,15 +1057,6 @@ a.ci-value:hover {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (min-width: 1100px) {
-    .hero {
-        gap: 60px;
-    }
-
-    .hero-visual {
-        display: block;
-    }
-}
 
 @media (max-width: 1024px) {
     .mission-grid {
@@ -1163,10 +1084,6 @@ a.ci-value:hover {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
-
-    .hero-content {
-        max-width: 100%;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1180,77 +1097,9 @@ a.ci-value:hover {
         border-color: #fff;
     }
 
-    .hero {
-        flex-direction: column;
-        padding-top: 100px;
-    }
-
-    .hero-title {
-        font-size: clamp(1.8rem, 6vw, 2.5rem);
-    }
-
-    .hero-title br {
-        display: none;
-    }
-
-    .hero-desc {
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .edge-grid,
     .testimonials-grid {
         grid-template-columns: 1fr;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-row {
-        gap: 20px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .stat-divider {
-        display: none;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .mission-visual {
-        width: 260px;
-        height: 260px;
-    }
-
-    .node-right,
-    .node-left {
-        display: none;
-    }
-
-    .hero-visual {
-        display: none;
-        /* Hide complex hero visual on mobile to prevent overlap */
-    }
-
-    .edge-card {
-        padding: 24px;
-    }
-
-    .section-header h2 br {
-        display: none;
-    }
-
-    .section-header p {
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 

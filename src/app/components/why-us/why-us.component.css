@@ -4,10 +4,16 @@
 }
 
 .edge-section {
-    padding: 100px 0;
+    padding: 80px 0;
     background: var(--dark-2);
     position: relative;
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .edge-section {
+        padding: 60px 0;
+    }
 }
 
 /* Section header styles scoped to Why Us component */
@@ -88,4 +94,103 @@
     border-radius: 999px;
     font-weight: 700;
     margin-bottom: 18px;
+}
+
+/* ============================================================
+   EDGE CARDS (moved from app.component.css)
+   ============================================================ */
+.edge-section {
+    background:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(79, 142, 255, .04), transparent),
+        var(--dark-2);
+}
+
+.edge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.edge-card {
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all var(--transition);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.edge-card:hover {
+    background: #fff;
+    border-color: var(--blue);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.08);
+}
+
+.card-bottom-glow {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79, 142, 255, .09), transparent);
+    pointer-events: none;
+}
+
+.card-icon-wrap {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(79, 142, 255, .07);
+    border: 1px solid rgba(79, 142, 255, .18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.edge-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: -.01em;
+    display: inline-block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.edge-card:hover h3 {
+    animation: slowWordJump 0.7s ease-in-out infinite alternate;
+}
+
+.edge-card p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+/* ============================================================
+   RESPONSIVE (Mobile & Tablet)
+   ============================================================ */
+@media (max-width: 1024px) {
+    .edge-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .edge-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edge-card {
+        padding: 24px;
+    }
 }

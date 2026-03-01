@@ -1,4 +1,3 @@
-
 <canvas #particleCanvas class="particle-canvas"></canvas>
 
 <!-- Cursor glow -->
@@ -7,7 +6,7 @@
 <!-- NAVIGATION -->
 <nav class="navbar" [class.scrolled]="scrolled" @navSlide>
   <div class="nav-inner">
-    <a class="logo" routerLink="/">
+    <a class="logo" routerLink="" (click)="closeMenu()">
       <span class="logo-w">Win</span><span class="logo-accent">Wibe</span>
     </a>
 
@@ -46,7 +45,7 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="logo footer-logo" routerLink="/">
+      <a class="logo footer-logo" routerLink="">
         <span class="logo-w">Win</span><span class="logo-accent">Wibe</span>
       </a>
       <p>Accelerating B2B revenue through precision marketing and expert IT solutions.</p>

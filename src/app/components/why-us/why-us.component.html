@@ -1,12 +1,11 @@
 <!-- Why Us Section -->
 <section id="edge-section" class="section edge-section" @sectionFade>
-    <div class="container">
+    <div class="container container-large">
         <div class="section-header">
             <span class="btn-ghost">Our Advantage</span>
             <h2>The Win Wibe Edge in a<br /><span class="gradient-text">Crowded Market</span></h2>
             <p>Win Wibe delivers integrated solutions that connect your data, technology, and marketing strategy into
-                one
-                powerful growth engine.</p>
+                one powerful growth engine.</p>
         </div>
 
         <div class="edge-grid" [@listStagger]="edgeCards.length">
@@ -46,7 +45,8 @@
                         <ng-container *ngIf="card.icon === 'chart'">
                             <!-- chart icon svg -->
                             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-                                <path stroke="url(#i3)" stroke-width="1.8" stroke-linecap="round" d="M3 17l4-8 4 4 4-6 4 4" />
+                                <path stroke="url(#i3)" stroke-width="1.8" stroke-linecap="round"
+                                    d="M3 17l4-8 4 4 4-6 4 4" />
                                 <defs>
                                     <linearGradient id="i3" x1="0" y1="0" x2="24" y2="24">
                                         <stop stop-color="#4f8eff" />

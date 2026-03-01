@@ -3,17 +3,42 @@
     width: 100%;
 }
 
+/* ============================================================
+   HERO SECTION (moved from app.component.css)
+   ============================================================ */
 .hero {
-    min-height: 100vh;
     position: relative;
-    overflow: hidden;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 120px 24px 60px;
+    padding: 80px 24px 60px;
+    background: var(--dark);
+    overflow: hidden;
 }
 
-/* Hero inner content copied from app component so styles are scoped to Home */
+.hero-bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    filter: saturate(1.1) brightness(0.9);
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--dark) 30%, transparent 70%),
+        linear-gradient(to top, var(--dark) 10%, transparent 50%);
+    z-index: 1;
+}
+
 .hero-grid {
     position: absolute;
     inset: 0;
@@ -22,7 +47,6 @@
         linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black, transparent);
-    pointer-events: none;
 }
 
 .hero-radial {
@@ -58,12 +82,25 @@
     transition: opacity .35s ease, transform .35s ease;
 }
 
+.badge-hidden {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.badge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue);
+    animation: pulseDot 2s infinite;
+}
+
 .hero-title {
     font-family: var(--font-head);
     font-size: clamp(2.2rem, 5vw, 4.2rem);
     font-weight: 900;
-    line-height: 1.12;
-    letter-spacing: -.03em;
+    line-height: 1.3;
+    letter-spacing: -.02em;
     color: var(--text);
     margin-bottom: 24px;
     transition: color 0.8s ease;
@@ -71,7 +108,7 @@
 
 .hero-desc {
     color: var(--text-muted);
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     line-height: 1.85;
     margin-bottom: 36px;
     max-width: 600px;
@@ -84,4 +121,233 @@
     gap: 16px;
     flex-wrap: wrap;
     margin-bottom: 60px;
+}
+
+/* Stats Section */
+.stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: nowrap;
+    padding: 20px 0;
+}
+
+/* Scrollbar hiding removed as scroll is disabled */
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.stat-value {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.stat-num {
+    font-family: var(--font-head);
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.stat-suffix {
+    font-family: var(--font-head);
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border);
+    flex-shrink: 0;
+}
+
+/* Hero Visual */
+/* Hero Visual removed for global background */
+
+.hero-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    animation: floatingHero 20s ease-in-out infinite;
+}
+
+.hero-img-glow {
+    position: absolute;
+    inset: 15%;
+    background: radial-gradient(circle at center, rgba(79, 142, 255, 0.4), transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    animation: pulseGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatingHero {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* floating cards */
+.hero-float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--dark-card-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--text);
+    box-shadow: var(--shadow-card);
+    white-space: nowrap;
+}
+
+.card-top {
+    top: 5%;
+    left: 52%;
+    animation: float 5s ease-in-out infinite;
+}
+
+.card-bottom {
+    bottom: 5%;
+    left: 40%;
+    animation: float 5.5s ease-in-out infinite reverse;
+}
+
+.fc-icon {
+    font-size: 1.2rem;
+}
+
+.fc-title {
+    font-weight: 700;
+    font-size: .85rem;
+    color: var(--text);
+}
+
+.fc-sub {
+    font-size: .75rem;
+    color: var(--text-muted);
+}
+
+/* ============================================================
+   RESPONSIVE (Mobile & Tablet)
+   ============================================================ */
+@media (min-width: 1100px) {
+    .hero {
+        gap: 60px;
+    }
+
+    .hero-visual {
+        display: block;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 60px 16px 40px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        word-spacing: 0.15em;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    .hero-desc {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .stat-divider {
+        display: block;
+        height: 30px;
+    }
+
+    .stats-row {
+        gap: 16px;
+        justify-content: center;
+        padding: 0 4px 10px;
+        flex-wrap: nowrap;
+    }
+
+    .stat-item {
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .stat-num {
+        font-size: 1.6rem;
+    }
+
+    .stat-suffix {
+        font-size: 1.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.04em;
+    }
+
+    .hero-visual {
+        display: none;
+        /* Hide complex hero visual on mobile to prevent overlap */
+    }
 }

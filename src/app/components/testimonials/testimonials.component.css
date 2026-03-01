@@ -4,8 +4,14 @@
 }
 
 .testimonials-section {
-    padding: 100px 0;
+    padding: 80px 0;
     background: var(--dark-2);
+}
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 60px 0;
+    }
 }
 
 /* Section header styles scoped to Testimonials component */
@@ -49,13 +55,13 @@
 
 .testi-card {
     background: #ffffff;
-    border: 1px solid rgba(2,6,23,0.04);
+    border: 1px solid rgba(2, 6, 23, 0.04);
     border-radius: 20px;
     padding: 36px 36px 32px 36px;
     position: relative;
     overflow: visible;
-    transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease, border-color .28s ease;
-    box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+    transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .28s ease, border-color .28s ease;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
 
 .testi-card::before {
@@ -71,8 +77,8 @@
 
 .testi-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 30px 60px rgba(15,23,42,0.14);
-    border-color: rgba(79,142,255,0.12);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.14);
+    border-color: rgba(79, 142, 255, 0.12);
 }
 
 .t-tag {
@@ -80,7 +86,7 @@
     padding: 6px 12px;
     border-radius: 999px;
     font-family: var(--font-head);
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #fff;
     text-transform: uppercase;
@@ -90,7 +96,7 @@
 
 .t-text {
     color: #0f1724;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     font-style: normal;
     margin-bottom: 24px;
@@ -114,7 +120,7 @@
     color: #fff;
     flex-shrink: 0;
     background: linear-gradient(135deg, #4f8eff, #a855f7);
-    box-shadow: 0 6px 18px rgba(15,23,42,0.12);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
     font-size: 0.95rem;
 }
 
@@ -129,10 +135,13 @@
 }
 
 /* Accent style for alternate card (right column) */
-.testimonials-grid > .testi-card:nth-child(2n) {
-    border-color: rgba(168,85,247,0.25);
+.testimonials-grid>.testi-card:nth-child(2n) {
+    border-color: rgba(168, 85, 247, 0.25);
 }
 
 @media (max-width: 768px) {
-    .testi-card { padding: 24px; border-radius: 16px; }
+    .testi-card {
+        padding: 24px;
+        border-radius: 16px;
+    }
 }

@@ -7,6 +7,7 @@ interface ServiceCard {
   title: string;
   description: string;
   icon: string;
+  image: string;
   features: string[];
   color: string;
   state: 'idle' | 'hovered';
@@ -27,6 +28,7 @@ export class ServicesComponent {
       title: 'B2B Lead Generation',
       description: 'Reach decision-makers with AI-verified B2B databases tailored to your industry and location.',
       icon: 'email',
+      image: 'assets/images/service_data.png',
       features: ['Industry-specific targeting', 'AI-verified contact lists', 'Compliant outreach campaigns'],
       color: '#4f8eff',
       state: 'idle'
@@ -36,6 +38,7 @@ export class ServicesComponent {
       title: 'Digital Marketing & SEO',
       description: 'Technical SEO and content strategies engineered to attract high-intent organic traffic.',
       icon: 'search',
+      image: 'assets/images/service_growth.png',
       features: ['Technical SEO audits', 'Content strategy & marketing', 'Social media management'],
       color: '#a855f7',
       state: 'idle'
@@ -45,6 +48,7 @@ export class ServicesComponent {
       title: 'Expert IT Consulting',
       description: 'Scalable CRM solutions and custom web applications to sustain your business growth.',
       icon: 'code',
+      image: 'assets/images/service_it.png',
       features: ['CRM implementation', 'Custom web applications', 'Infrastructure optimisation'],
       color: '#22d3ee',
       state: 'idle'
@@ -54,6 +58,7 @@ export class ServicesComponent {
       title: 'Data & Cleansing',
       description: 'Live database cross-referencing and firmographic appending to keep your data fresh.',
       icon: 'database',
+      image: 'assets/images/hero_graphic.png',
       features: ['Live database cross-referencing', 'Firmographic data appending', 'Dead contact removal'],
       color: '#f59e0b',
       state: 'idle'

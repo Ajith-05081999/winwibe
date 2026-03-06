@@ -293,6 +293,7 @@ button {
 
 .btn-ghost {
     display: inline-block;
+    margin-top: 20px;
     padding: 8px 16px;
     border-radius: 50px;
     font-size: 0.85rem;

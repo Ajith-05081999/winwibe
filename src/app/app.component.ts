@@ -29,6 +29,17 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   isBrowser: boolean;
   scrolled = false;
   menuOpen = false;
+  navServicesDropdownOpen = false;
+
+  navServicesOptions = [
+    { num: '01', title: 'Verified B2B Contact Data', target: 'service-01' },
+    { num: '02', title: 'B2B Lead Generation', target: 'service-02' },
+    { num: '03', title: 'Executive Appointment Setting', target: 'service-03' },
+    { num: '04', title: 'Digital Marketing', target: 'service-04' },
+    { num: '05', title: 'Email Campaign Management', target: 'service-05' },
+    { num: '06', title: 'Email Template Design', target: 'service-06' },
+    { num: '07', title: 'Organic SEO', target: 'service-07' }
+  ];
 
   // Particle canvas
   private ctx!: CanvasRenderingContext2D;
@@ -130,5 +141,28 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       this.animFrame = requestAnimationFrame(tick);
     };
     tick();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (!this.isBrowser) return;
+
+    // Check if the click is outside the dropdown trigger and menu
+    const target = event.target as HTMLElement;
+    if (!target.closest('.nav-item-dropdown')) {
+      this.navServicesDropdownOpen = false;
+    }
+  }
+
+  toggleNavDropdown(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.navServicesDropdownOpen = !this.navServicesDropdownOpen;
+  }
+
+  closeNavDropdown(): void {
+    this.navServicesDropdownOpen = false;
   }
 }

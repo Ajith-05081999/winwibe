@@ -27,7 +27,7 @@
 }
 
 .section-header h2 {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     letter-spacing: -.02em;
     margin-bottom: 16px;
     color: var(--text);
@@ -35,7 +35,7 @@
 }
 
 .section-header p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     max-width: 600px;
     margin: 0 auto;
@@ -86,7 +86,7 @@
     padding: 6px 12px;
     border-radius: 999px;
     font-family: var(--font-head);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #fff;
     text-transform: uppercase;
@@ -96,7 +96,7 @@
 
 .t-text {
     color: #0f1724;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     font-style: normal;
     margin-bottom: 24px;

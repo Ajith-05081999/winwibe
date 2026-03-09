@@ -120,9 +120,11 @@ body.scrolled-down .gradient-text {
     display: flex;
     align-items: center;
     gap: 36px;
+    position: relative;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-dropdown-trigger {
     font-size: 1.05rem;
     font-weight: 500;
     color: var(--text-muted);
@@ -130,9 +132,17 @@ body.scrolled-down .gradient-text {
     transition: color var(--transition);
     letter-spacing: .02em;
     position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
 }
 
-.nav-links a::after {
+.nav-links a::after,
+.nav-dropdown-trigger::after {
     content: '';
     position: absolute;
     width: 0;
@@ -145,13 +155,79 @@ body.scrolled-down .gradient-text {
 }
 
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a.active,
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger.active {
     color: var(--blue);
 }
 
 .nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a.active::after,
+.nav-dropdown-trigger:hover::after,
+.nav-dropdown-trigger.active::after {
     width: 100%;
+}
+
+/* NAVBAR DROPDOWN - Global Services Menu */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #fff;
+    border: 1.5px solid rgba(79, 142, 255, 0.15);
+    border-radius: 14px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    z-index: 1500;
+    overflow: hidden;
+    min-width: 330px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    padding: 10px;
+}
+
+.nav-dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.15s ease, padding-left 0.2s ease;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 2px;
+}
+
+.nav-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.nav-dropdown-item:hover {
+    background: rgba(79, 142, 255, 0.05);
+    color: var(--blue);
+    padding-left: 22px;
+}
+
+.nav-dropdown-num {
+    font-family: var(--font-head);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    min-width: 24px;
 }
 
 .nav-cta {

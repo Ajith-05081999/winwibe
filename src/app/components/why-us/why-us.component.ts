@@ -20,20 +20,20 @@ interface EdgeCard {
 export class WhyUsComponent {
   edgeCards: EdgeCard[] = [
     {
-      title: 'Verified, High-Intent Data',
-      description: 'AI-validated B2B lists continuously cleansed for maximum accuracy and high-intent engagement.',
+      title: 'Data-Governed Decisions',
+      description: 'We replace marketing guesswork with hard analytics. Every dollar spent is tracked to a measurable pipeline return.',
       icon: 'shield',
       state: 'idle'
     },
     {
-      title: 'End-to-End IT Integration',
-      description: 'Alignment of your tech stack, CRM, and infrastructure to seamlessly handle and close leads.',
+      title: 'Unified Architecture',
+      description: 'From verified B2B data to high-converting ad campaigns, we build seamless systems that actually communicate with each other.',
       icon: 'server',
       state: 'idle'
     },
     {
-      title: 'ROI-Obsessed Marketing',
-      description: 'ROI-driven strategies spanning SEO and email to maximise revenue per pound spent.',
+      title: 'Outcome-Obsessed',
+      description: 'We do not report on vanity metrics like "impressions." We measure our success strictly by your lowered Customer Acquisition Cost (CAC) and closed deals.',
       icon: 'chart',
       state: 'idle'
     }

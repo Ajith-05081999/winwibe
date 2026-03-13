@@ -134,12 +134,11 @@ body.scrolled-down .gradient-text {
     letter-spacing: .02em;
     position: relative;
     background: transparent;
-    border: none;
-    padding: 0;
     display: flex;
     align-items: center;
     gap: 6px;
     font-family: inherit;
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.3s ease;
 }
 
 .nav-links a::after,
@@ -148,11 +147,13 @@ body.scrolled-down .gradient-text {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -6px;
-    left: 0;
-    background: var(--gradient);
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    bottom: -8px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: linear-gradient(90deg, transparent, var(--logo-gradient, #4f8eff), transparent); 
+    transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
     border-radius: 2px;
+    opacity: 0;
 }
 
 .nav-links a:hover,
@@ -160,13 +161,16 @@ body.scrolled-down .gradient-text {
 .nav-dropdown-trigger:hover,
 .nav-dropdown-trigger.active {
     color: #fff;
+    transform: translateY(-2px);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after,
 .nav-dropdown-trigger:hover::after,
 .nav-dropdown-trigger.active::after {
-    width: 100%;
+    width: 80%;
+    opacity: 1;
 }
 
 /* NAVBAR DROPDOWN - Global Services Menu */
@@ -180,16 +184,16 @@ body.scrolled-down .gradient-text {
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: #fff;
-    border: 1.5px solid rgba(79, 142, 255, 0.15);
-    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08); 
+    border-radius: 8px; 
     box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
     z-index: 1500;
     overflow: hidden;
-    min-width: 420px;
+    width: max-content;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    padding: 15px;
+    padding: 0; 
 }
 
 .nav-dropdown-menu.open {
@@ -201,16 +205,19 @@ body.scrolled-down .gradient-text {
 .nav-dropdown-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 16px 24px;
-    font-size: 0.98rem;
-    font-weight: 500;
-    color: #0f172a !important;
+    justify-content: space-between;
+    gap: 60px; 
+    padding: 28px 40px; 
+    font-size: 1.1rem;
+    font-weight: 700; 
+    color: var(--blue) !important; 
+    white-space: nowrap;
     cursor: pointer;
     transition: background 0.15s ease, padding-left 0.25s ease;
     text-decoration: none;
-    border-radius: 10px;
-    margin-bottom: 2px;
+    border-bottom: 1px solid #f1f5f9;
+    margin: 0;
+    border-radius: 0;
 }
 
 .nav-dropdown-item:last-child {
@@ -218,9 +225,24 @@ body.scrolled-down .gradient-text {
 }
 
 .nav-dropdown-item:hover {
-    background: rgba(79, 142, 255, 0.05);
-    color: var(--blue);
-    padding-left: 32px;
+    background: #f8fafc;
+}
+
+.nav-dropdown-item::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid var(--blue);
+    border-top: 2px solid var(--blue);
+    transform: rotate(45deg);
+    opacity: 0.2;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-dropdown-item:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(2px, -2px);
 }
 
 
@@ -1197,7 +1219,20 @@ a.ci-value:hover {
     }
 
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .footer-brand, .footer-links-col, .footer-cta-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bottom-inner {
+        flex-direction: column;
+        text-align: center;
     }
 }
 

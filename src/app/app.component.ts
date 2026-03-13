@@ -32,13 +32,13 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   navServicesDropdownOpen = false;
 
   navServicesOptions = [
-    { num: '01', title: 'Verified B2B Contact Data', target: 'service-01' },
-    { num: '02', title: 'B2B Lead Generation', target: 'service-02' },
-    { num: '03', title: 'Executive Appointment Setting', target: 'service-03' },
-    { num: '04', title: 'Digital Marketing', target: 'service-04' },
-    { num: '05', title: 'Email Campaign Management', target: 'service-05' },
-    { num: '06', title: 'Email Template Design', target: 'service-06' },
-    { num: '07', title: 'Organic SEO', target: 'service-07' }
+    { title: 'Verified B2B Contact Data', target: 'service-01' },
+    { title: 'B2B Lead Generation', target: 'service-02' },
+    { title: 'Executive Appointment Setting', target: 'service-03' },
+    { title: 'Digital Marketing', target: 'service-04' },
+    { title: 'Email Campaign Management', target: 'service-05' },
+    { title: 'Email Template Design', target: 'service-06' },
+    { title: 'Organic SEO', target: 'service-07' }
   ];
 
   // Particle canvas

@@ -6,12 +6,12 @@
     --amber: #f59e0b;
     --gradient: linear-gradient(135deg, var(--blue), var(--purple));
 
-    --dark: #f8fafc;
-    /* Light background */
-    --dark-1: #f8fafc;
+    --dark: #f5f9ff;
+    /* Whitish Blue primary background */
+    --dark-1: #f5f9ff;
     /* Alias for --dark */
-    --dark-2: #f1f5f9;
-    /* Alt light background */
+    --dark-2: #edf5ff;
+    /* Alt whitish blue background */
     --dark-card: rgba(255, 255, 255, 0.85);
     /* Glass card */
     --dark-card-2: rgba(255, 255, 255, 0.7);
@@ -293,7 +293,7 @@ button {
 
 .btn-ghost {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 8px 16px;
     border-radius: 50px;
     font-size: 0.85rem;

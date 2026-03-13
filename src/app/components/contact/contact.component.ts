@@ -33,24 +33,24 @@ export class ContactComponent {
 
     this.formLoading = true;
 
-    // Construct WhatsApp message
-    const phoneNumber = '+919611451066';
-    const message = `*New Inquiry from Win Wibe Website*%0A%0A` +
-      `*Name:* ${this.form.fullName}%0A` +
-      `*Email:* ${this.form.businessEmail}%0A` +
-      `*Phone:* ${this.form.phoneNumber}%0A` +
-      `*Company:* ${this.form.companyName}%0A` +
-      `*Primary Goal:* ${this.form.primaryGoal}%0A%0A` +
-      `*Message:* %0A${this.form.message}`;
+    // Construct Mailto link
+    const email = 'info@winwibe.com';
+    const subject = `New Inquiry from ${this.form.fullName} - Win Wibe Website`;
+    const body = `Name: ${this.form.fullName}\n` +
+      `Email: ${this.form.businessEmail}\n` +
+      `Phone: ${this.form.phoneNumber || 'N/A'}\n` +
+      `Company: ${this.form.companyName}\n` +
+      `Primary Goal: ${this.form.primaryGoal}\n\n` +
+      `Message:\n${this.form.message}`;
 
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${message}`;
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     setTimeout(() => {
       this.formLoading = false;
       this.formSent = true;
 
-      // Open WhatsApp in a new tab
-      window.open(whatsappUrl, '_blank');
-    }, 1200);
+      // Open email client
+      window.location.href = mailtoUrl;
+    }, 800);
   }
 }

@@ -25,13 +25,12 @@
         <div class="nav-dropdown-menu" [class.open]="navServicesDropdownOpen">
           <a *ngFor="let option of navServicesOptions" [routerLink]="['/services']" [fragment]="option.target"
             (click)="closeNavDropdown()" class="nav-dropdown-item">
-            <span class="nav-dropdown-num">{{ option.num }}</span>
             <span>{{ option.title }}</span>
           </a>
         </div>
       </li>
       <li><a routerLink="/testimonials" routerLinkActive="active">Testimonials</a></li>
-      <li><a class="nav-cta" routerLink="/contact">Get Free Audit</a></li>
+      <li><a class="nav-cta" routerLink="/contact">Get In Touch</a></li>
     </ul>
 
     <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
@@ -48,7 +47,7 @@
     <li><a routerLink="/mission" (click)="closeMenu()">Mission</a></li>
     <li><a routerLink="/services" (click)="closeMenu()">Services</a></li>
     <li><a routerLink="/testimonials" (click)="closeMenu()">Testimonials</a></li>
-    <li><a class="mobile-cta" routerLink="/contact" (click)="closeMenu()">Get Free Audit</a></li>
+    <li><a class="mobile-cta" routerLink="/contact" (click)="closeMenu()">Get in Touch</a></li>
   </ul>
 </div>
 
@@ -66,27 +65,27 @@
       </a>
       <p>Accelerating B2B revenue through precision marketing and expert IT solutions.</p>
       <div class="footer-socials">
-        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/winwibe-technologies-250a093b6/" target="_blank" aria-label="LinkedIn">
           <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
             <circle cx="4" cy="4" r="2" fill="currentColor" />
           </svg>
         </a>
-        <a href="https://twitter.com" target="_blank" aria-label="X (Twitter)">
+        <a href="https://x.com/WinwibeT82203" target="_blank" aria-label="X (Twitter)">
           <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 4l11.733 16H20L8.267 4z" />
             <path stroke="currentColor" stroke-width="2" stroke-linecap="round"
               d="M4 20l6.768-6.768m2.464-2.464L20 4" />
           </svg>
         </a>
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+        <a href="https://www.instagram.com/winwibetechnologies/" target="_blank" aria-label="Instagram">
           <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke="currentColor" stroke-width="2" />
             <path stroke="currentColor" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01" />
           </svg>
         </a>
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+        <a href="https://www.facebook.com/profile.php?id=61582148702857" target="_blank" aria-label="Facebook">
           <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />

@@ -22,7 +22,7 @@
                         </div>
                         <div>
                             <span class="ci-label">Email</span>
-                            <a href="mailto:growth@winwibe.com" class="ci-value">growth&#64;winwibe.com</a>
+                            <a href="mailto:growth@winwibe.com" class="ci-value">info&#64;winwibe.com</a>
                         </div>
                     </div>
                     <div class="ci-item">
@@ -156,9 +156,12 @@
                         <select id="goal" [(ngModel)]="form.primaryGoal" name="primaryGoal" #primaryGoal="ngModel"
                             required [class.invalid]="primaryGoal.invalid && primaryGoal.touched">
                             <option value="" disabled>Select your primary goal</option>
-                            <option value="it">IT Consulting</option>
-                            <option value="b2b">B2B Data</option>
-                            <option value="seo">SEO / Marketing</option>
+                            <option value="b2b-data">Verified B2B Contact Data</option>
+                            <option value="lead-gen">B2B Lead Generation</option>
+                            <option value="appt-setting">Executive Appointment Setting</option>
+                            <option value="digital-marketing">Digital Marketing (Meta/Google)</option>
+                            <option value="email-management">Email Campaign Management</option>
+                            <option value="organic-seo">Organic SEO</option>
                             <option value="other">Other</option>
                         </select>
                         <div *ngIf="primaryGoal.invalid && primaryGoal.touched" class="error-msg">

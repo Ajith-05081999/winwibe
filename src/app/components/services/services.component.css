@@ -50,7 +50,7 @@
    SERVICES GRID
    ============================================================ */
 #services-section .container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -58,33 +58,50 @@
 .services-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
-    align-items: start;
+    gap: 20px;
+    align-items: stretch;
 }
 
 @media (min-width: 768px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
+    .service-card.featured-card {
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+        padding: 40px;
     }
-}
 
-@media (min-width: 1200px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
+    .featured-card .svc-image-wrap {
+        width: 45%;
+        margin: 0;
+        height: 380px;
+        border-radius: 10px;
+        flex-shrink: 0;
+    }
+
+    .featured-card .svc-content-wrap {
+        flex: 1;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
     }
 }
 
 .service-card {
     background: #ffffff;
     border: 1px solid rgba(2, 6, 23, 0.06);
-    border-radius: 14px;
-    padding: 34px 36px;
+    border-radius: 12px;
+    padding: 24px 28px;
     position: relative;
     overflow: visible;
     transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card.featured-card {
+    /* grid-column: 1 / -1; Removed to allow natural vertical stacking */
+    margin-bottom: 20px;
 }
 
 .service-card:hover {
@@ -94,9 +111,9 @@
 }
 
 .svc-image-wrap {
-    width: calc(100% + 72px);
-    margin: -34px -36px 24px -36px;
-    height: 360px;
+    width: calc(100% + 56px);
+    margin: -24px -28px 20px -28px;
+    height: 240px;
     overflow: hidden;
     border-radius: 14px 14px 0 0;
     position: relative;
@@ -111,10 +128,7 @@
 }
 
 .svc-img.contain-fit {
-    object-fit: contain;
-    background-color: #fcf4eb;
-    padding: 15px;
-    box-sizing: border-box;
+    background-color: #ffffff;
 }
 
 .service-card:hover .svc-img {
@@ -130,15 +144,21 @@
 
 .s-num {
     font-family: var(--font-head);
-    font-size: 84px;
+    font-size: 64px;
     font-weight: 900;
     color: rgba(15, 23, 42, 0.06);
     position: absolute;
-    top: 280px;
+    top: 200px;
     right: 20px;
     line-height: 1;
     pointer-events: none;
     z-index: 0;
+}
+
+.featured-card .s-num {
+    top: 40px;
+    right: 40px;
+    font-size: 120px;
 }
 
 .svc-icon-wrap {
@@ -176,6 +196,12 @@
     animation: slowWordJump 0.7s ease-in-out infinite alternate;
 }
 
+.svc-content-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .svc-body-text {
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -183,7 +209,7 @@
     text-align: left;
     color: var(--text-muted);
     font-weight: 400;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 .svc-tagline {
@@ -209,6 +235,8 @@
     font-weight: 700;
     cursor: pointer;
     margin-bottom: 16px;
+    margin-top: auto;
+    width: fit-content;
     transition: background 0.2s ease, border-color 0.2s ease;
 }
 

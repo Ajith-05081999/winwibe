@@ -11,9 +11,10 @@
 
         <div class="services-grid" [@listStagger]="services.length">
             <ng-container *ngFor="let service of services; trackBy: trackByTitle">
-                <div class="service-card" [id]="'service-' + service.num" [@cardHover]="service.state"
-                    (mouseenter)="onServiceHover(service,'hovered')" (mouseleave)="onServiceHover(service,'idle')"
-                    [style.--accent-color]="service.color" [style.--accent-rgba]="hexToRgb(service.color)">
+                <div class="service-card featured-card" [id]="'service-' + service.num"
+                    [@cardHover]="service.state" (mouseenter)="onServiceHover(service,'hovered')"
+                    (mouseleave)="onServiceHover(service,'idle')" [style.--accent-color]="service.color"
+                    [style.--accent-rgba]="hexToRgb(service.color)">
                     <div class="svc-image-wrap">
                         <img [src]="service.image" [alt]="service.title" class="svc-img"
                             [class.contain-fit]="service.num === '02'">
@@ -58,30 +59,33 @@
                             </svg>
                         </ng-container>
                     </div>
-                    <p class="svc-tagline">{{ service.tagline }}</p>
-                    <h3>{{ service.title }}</h3>
-                    <p class="svc-body-text">{{ service.expanded ? service.description : (service.description |
-                        slice:0:120) + (service.description.length > 120 ? '...' : '') }}</p>
+                    <div class="svc-content-wrap">
+                        <p class="svc-tagline">{{ service.tagline }}</p>
+                        <h3>{{ service.title }}</h3>
+                        <p class="svc-body-text">{{ service.expanded ? service.description : (service.description |
+                            slice:0:120) + (service.description.length > 120 ? '...' : '') }}</p>
 
-                    <!-- Read More Toggle -->
-                    <button class="read-more-btn" (click)="toggleExpand(service)">
-                        <span>{{ service.expanded ? 'Read Less' : 'Read More' }}</span>
-                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" [class.rotated]="service.expanded">
-                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
+                        <!-- Read More Toggle -->
+                        <button class="read-more-btn" (click)="toggleExpand(service)">
+                            <span>{{ service.expanded ? 'Read Less' : 'Read More' }}</span>
+                            <svg width="14" height="14" fill="none" viewBox="0 0 24 24"
+                                [class.rotated]="service.expanded">
+                                <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
 
-                    <ul *ngIf="service.expanded" class="svc-features-list">
-                        <ng-container *ngFor="let feat of service.features; trackBy: trackByFeat">
-                            <li class="svc-body-text">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" class="feat-tick">
-                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                {{ feat }}
-                            </li>
-                        </ng-container>
-                    </ul>
+                        <ul *ngIf="service.expanded" class="svc-features-list">
+                            <ng-container *ngFor="let feat of service.features; trackBy: trackByFeat">
+                                <li class="svc-body-text">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" class="feat-tick">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    {{ feat }}
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </div>
                 </div>
             </ng-container>
         </div>

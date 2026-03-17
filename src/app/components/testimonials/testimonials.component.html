@@ -7,7 +7,20 @@
             <p>Read how Win Wibe has helped organisations across three continents achieve their growth targets.</p>
         </div>
 
-        <div class="testimonials-grid" [@listStagger]="testimonials.length">
+        <div class="testimonials-nav">
+            <button class="nav-btn left-btn" (click)="scrollLeft()" aria-label="Scroll left">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="nav-btn right-btn" (click)="scrollRight()" aria-label="Scroll right">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <div class="testimonials-grid" #scrollContainer [@listStagger]="testimonials.length">
             <ng-container *ngFor="let tm of testimonials; trackBy: trackByName">
                 <div class="testi-card">
                     <div class="t-tag" [style.background]="tm.gradient">{{ tm.tag }}</div>

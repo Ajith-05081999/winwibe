@@ -100,17 +100,31 @@ body.scrolled-down .gradient-text {
     transition: transform var(--transition-bounce);
 }
 
-.logo:hover {
-    transform: scale(1.04);
+.logo-img {
+    height: 85px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo-w {
-    color: #fff;
+.logo:hover .logo-img {
+    transform: scale(1.05);
 }
 
-.logo-accent {
-    color: #fff;
-    opacity: 0.9;
+.footer-logo .logo-img {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 65px;
+    }
+
+    .footer-logo .logo-img {
+        height: 80px;
+    }
 }
 
 .footer-logo {
@@ -136,9 +150,11 @@ body.scrolled-down .gradient-text {
     background: transparent;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
     font-family: inherit;
-    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .nav-links a::after,
@@ -147,10 +163,10 @@ body.scrolled-down .gradient-text {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -8px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    background: linear-gradient(90deg, transparent, var(--logo-gradient, #4f8eff), transparent); 
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, var(--logo-gradient, #4f8eff), transparent);
     transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
     border-radius: 2px;
     opacity: 0;
@@ -184,8 +200,8 @@ body.scrolled-down .gradient-text {
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.08); 
-    border-radius: 8px; 
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
     box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
     z-index: 1500;
     overflow: hidden;
@@ -193,10 +209,11 @@ body.scrolled-down .gradient-text {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    padding: 0; 
+    padding: 0;
 }
 
-.nav-dropdown-menu.open {
+.nav-dropdown-menu.open,
+.nav-item-dropdown:hover .nav-dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
@@ -206,11 +223,11 @@ body.scrolled-down .gradient-text {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px; 
-    padding: 28px 40px; 
+    gap: 60px;
+    padding: 28px 40px;
     font-size: 1.1rem;
-    font-weight: 700; 
-    color: var(--blue) !important; 
+    font-weight: 700;
+    color: var(--blue) !important;
     white-space: nowrap;
     cursor: pointer;
     transition: background 0.15s ease, padding-left 0.25s ease;
@@ -689,11 +706,7 @@ body.scrolled-down .gradient-text {
     /* f1f5f9 in light theme */
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-}
+
 
 .testimonial-card {
     background: var(--dark-card);
@@ -1223,8 +1236,10 @@ a.ci-value:hover {
         gap: 32px;
         text-align: center;
     }
-    
-    .footer-brand, .footer-links-col, .footer-cta-col {
+
+    .footer-brand,
+    .footer-links-col,
+    .footer-cta-col {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1243,12 +1258,15 @@ a.ci-value:hover {
 
     .hamburger {
         display: flex;
-        background: #fff;
-        border-color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .edge-grid,
-    .testimonials-grid {
+    .hamburger span {
+        background: #fff;
+    }
+
+    .edge-grid {
         grid-template-columns: 1fr;
     }
 }

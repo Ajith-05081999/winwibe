@@ -7,21 +7,21 @@
 <nav class="navbar" [class.scrolled]="scrolled" @navSlide>
   <div class="nav-inner">
     <a class="logo" routerLink="" (click)="closeMenu()">
-      <span class="logo-w">Win</span><span class="logo-accent">Wibe</span>
+      <img src="assets/images/logo.png" alt="WinWibe Logo" class="logo-img">
     </a>
 
     <ul class="nav-links">
       <li><a routerLink="/why-us" routerLinkActive="active">Why Us</a></li>
       <li><a routerLink="/mission" routerLinkActive="active">Mission</a></li>
-      <li class="nav-item-dropdown">
-        <button class="nav-dropdown-trigger" (click)="toggleNavDropdown($event)"
-          [class.active]="navServicesDropdownOpen">
+      <li class="nav-item-dropdown" (mouseenter)="navServicesDropdownOpen = true"
+        (mouseleave)="navServicesDropdownOpen = false">
+        <a routerLink="/services" class="nav-dropdown-trigger" routerLinkActive="active" (click)="closeNavDropdown()">
           Services
           <svg width="12" height="12" fill="none" viewBox="0 0 24 24" class="chevron"
             [class.open]="navServicesDropdownOpen">
             <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M6 9l6 6 6-6" />
           </svg>
-        </button>
+        </a>
         <div class="nav-dropdown-menu" [class.open]="navServicesDropdownOpen">
           <a *ngFor="let option of navServicesOptions" [routerLink]="['/services']" [fragment]="option.target"
             (click)="closeNavDropdown()" class="nav-dropdown-item">
@@ -61,7 +61,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a class="logo footer-logo" routerLink="">
-        <span class="logo-w">Win</span><span class="logo-accent">Wibe</span>
+        <img src="assets/images/logo.png" alt="WinWibe Logo" class="logo-img">
       </a>
       <p>Accelerating B2B revenue through precision marketing and expert IT solutions.</p>
       <div class="footer-socials">

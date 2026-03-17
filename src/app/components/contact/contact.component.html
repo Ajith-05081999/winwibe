@@ -22,7 +22,7 @@
                         </div>
                         <div>
                             <span class="ci-label">Email</span>
-                            <a href="mailto:growth@winwibe.com" class="ci-value">info&#64;winwibe.com</a>
+                            <a href="mailto:info@winwibe.com" class="ci-value">info&#64;winwibe.com</a>
                         </div>
                     </div>
                     <div class="ci-item">
@@ -37,7 +37,7 @@
                             <span class="ci-value">Within 24 hours</span>
                         </div>
                     </div>
-                    <div class="ci-item">
+                    <!-- <div class="ci-item">
                         <div class="ci-icon">
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
@@ -48,7 +48,7 @@
                             <span class="ci-label">Phone / WhatsApp</span>
                             <a href="https://wa.me/919187580064" target="_blank" class="ci-value">+91 9187580064</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Micro trust indicators -->
@@ -152,26 +152,26 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="goal">Primary Goal</label>
-                        <select id="goal" [(ngModel)]="form.primaryGoal" name="primaryGoal" #primaryGoal="ngModel"
-                            required [class.invalid]="primaryGoal.invalid && primaryGoal.touched">
-                            <option value="" disabled>Select your primary goal</option>
-                            <option value="b2b-data">Verified B2B Contact Data</option>
-                            <option value="lead-gen">B2B Lead Generation</option>
-                            <option value="appt-setting">Executive Appointment Setting</option>
-                            <option value="digital-marketing">Digital Marketing (Meta/Google)</option>
-                            <option value="email-management">Email Campaign Management</option>
-                            <option value="organic-seo">Organic SEO</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <div *ngIf="primaryGoal.invalid && primaryGoal.touched" class="error-msg">
+                        <label>What are your goals? (Select multiple)</label>
+                        <div class="goal-chips">
+                            <button type="button" *ngFor="let goal of goals" class="goal-chip"
+                                [class.active]="isGoalSelected(goal.id)" (click)="toggleGoal(goal.id)">
+                                {{ goal.label }}
+                                <svg *ngIf="isGoalSelected(goal.id)" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div *ngIf="contactNgForm.submitted && form.selectedGoals.length === 0" class="error-msg">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10" />
                                 <line x1="12" y1="8" x2="12" y2="12" />
                                 <line x1="12" y1="16" x2="12.01" y2="16" />
                             </svg>
-                            Please select a goal
+                            Please select at least one goal
                         </div>
                     </div>
                     <div class="form-group">
@@ -190,7 +190,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn-primary btn-full" [class.loading]="formLoading"
-                        [disabled]="formLoading || contactNgForm.invalid">
+                        [disabled]="formLoading || contactNgForm.invalid || form.selectedGoals.length === 0">
                         <ng-container *ngIf="!formLoading">
                             <span>Send Message</span>
                             <svg width="18" height="18" fill="none" viewBox="0 0 24 24">

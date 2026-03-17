@@ -19,15 +19,43 @@ export class ContactComponent {
     businessEmail: '',
     phoneNumber: '',
     companyName: '',
-    primaryGoal: '',
+    selectedGoals: [] as string[],
     message: ''
   };
+
+  goals = [
+    { id: 'b2b-data', label: 'Verified B2B Contact Data' },
+    { id: 'lead-gen', label: 'B2B Lead Generation' },
+    { id: 'appt-setting', label: 'Executive Appointment Setting' },
+    { id: 'digital-marketing', label: 'Digital Marketing (Meta/Google)' },
+    { id: 'email-management', label: 'Email Campaign Management' },
+    { id: 'organic-seo', label: 'Organic SEO' },
+    { id: 'other', label: 'Other' }
+  ];
+
+  toggleGoal(goalId: string): void {
+    const index = this.form.selectedGoals.indexOf(goalId);
+    if (index === -1) {
+      this.form.selectedGoals.push(goalId);
+    } else {
+      this.form.selectedGoals.splice(index, 1);
+    }
+  }
+
+  isGoalSelected(goalId: string): boolean {
+    return this.form.selectedGoals.includes(goalId);
+  }
 
   onSubmit(contactNgForm: any): void {
     if (contactNgForm && contactNgForm.invalid) {
       Object.keys(contactNgForm.controls).forEach(key => {
         contactNgForm.controls[key].markAsTouched();
       });
+      return;
+    }
+
+    // Custom validation for goals
+    if (this.form.selectedGoals.length === 0) {
       return;
     }
 
@@ -40,7 +68,7 @@ export class ContactComponent {
       `Email: ${this.form.businessEmail}\n` +
       `Phone: ${this.form.phoneNumber || 'N/A'}\n` +
       `Company: ${this.form.companyName}\n` +
-      `Primary Goal: ${this.form.primaryGoal}\n\n` +
+      `Selected Goals: ${this.form.selectedGoals.join(', ')}\n\n` +
       `Message:\n${this.form.message}`;
 
     const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

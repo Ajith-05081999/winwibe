@@ -33,18 +33,18 @@
     right: 0;
     z-index: 1000;
     padding: 20px 0;
-    background: var(--blue);
+    background: #ffffff;
     transition: all .4s cubic-bezier(.4, 0, .2, 1);
     isolation: isolate;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
 .navbar.scrolled {
-    background: rgba(59, 130, 246, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 14px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Scroll Color Change Class – LIGHT MODE ADJUSTMENT */
@@ -142,7 +142,7 @@ body.scrolled-down .gradient-text {
 .nav-dropdown-trigger {
     font-size: 1.05rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--blue);
     cursor: pointer;
     transition: color var(--transition);
     letter-spacing: .02em;
@@ -176,9 +176,9 @@ body.scrolled-down .gradient-text {
 .nav-links a.active,
 .nav-dropdown-trigger:hover,
 .nav-dropdown-trigger.active {
-    color: #fff;
+    color: var(--blue);
     transform: translateY(-2px);
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    text-shadow: none;
 }
 
 .nav-links a:hover::after,
@@ -1092,12 +1092,12 @@ a.ci-value:hover {
    FOOTER
    ============================================================ */
 .footer {
-    background: #020617;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding: 80px 24px 0;
     position: relative;
     z-index: 1;
-    color: #f8fafc;
+    color: var(--text);
 }
 
 .footer-grid {
@@ -1108,14 +1108,14 @@ a.ci-value:hover {
 }
 
 .footer-brand p {
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 1.1rem;
     line-height: 1.7;
     margin-top: 16px;
 }
 
 .footer-logo .logo-w {
-    color: #fff !important;
+    color: var(--text) !important;
 }
 
 .footer-socials {
@@ -1129,9 +1129,9 @@ a.ci-value:hover {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #94a3b8;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--text-muted);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1157,7 +1157,7 @@ a.ci-value:hover {
 .footer-links-col h4 {
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text);
     letter-spacing: .08em;
     text-transform: uppercase;
     margin-bottom: 24px;
@@ -1168,7 +1168,7 @@ a.ci-value:hover {
 }
 
 .footer-links-col a {
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 1.1rem;
     cursor: pointer;
     transition: color .3s;
@@ -1179,14 +1179,14 @@ a.ci-value:hover {
 }
 
 .footer-cta-col p {
-    color: #fff;
+    color: var(--text);
     font-size: 1.15rem;
     font-weight: 500;
     line-height: 1.6;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding: 30px 0;
     margin-top: 60px;
 }
